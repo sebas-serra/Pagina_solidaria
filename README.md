@@ -1,4 +1,5 @@
 # 25-26_DesafioAPS_HTML-CSS_Template
+Proyecto en colaboracion con estudiantes de La Salle Madrid
 
 Deploy: https://pagina-solidaria.vercel.app/
 
