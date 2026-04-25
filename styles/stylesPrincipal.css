@@ -1,0 +1,412 @@
+* {
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --azul-principal: #0b4ea2;
+    --azul-oscuro: #08346b;
+    --azul-suave: #eaf3ff;
+    --blanco: #ffffff;
+    --texto: #1d2b3a;
+    --texto-secundario: #4b6177;
+    --acento: #ffd447;
+}
+
+body {
+    background: linear-gradient(180deg, #f7fbff 0%, #eaf3ff 100%);
+    color: var(--texto);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: var(--blanco);
+    color: var(--azul-oscuro);
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    border-bottom: 5px solid var(--acento);
+    box-shadow: 0 10px 26px rgba(8, 52, 107, 0.08);
+}
+
+.logo {
+    display: block;
+}
+
+.logo img {
+    width: min(240px, 100%);
+    height: auto;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.subtitulo {
+    color: var(--azul-principal);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.titulo h2 {
+    font-size: clamp(1.4rem, 5vw, 3rem);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--azul-oscuro);
+    font-weight: 800;
+}
+
+/* ===== MAIN (mobile: single column) ===== */
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 18px;
+}
+
+/* ===== COLUMNAS ===== */
+.columna-izquierda,
+.columna-derecha {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    min-width: 0;
+}
+
+/* ===== MENU LATERAL ===== */
+.menu-lateral {
+    background: linear-gradient(180deg, var(--azul-oscuro) 0%, var(--azul-principal) 100%);
+    padding: 20px 14px;
+    border-radius: 20px;
+    box-shadow: 0 22px 45px rgba(8, 52, 107, 0.22);
+}
+
+.menu-lateral ul {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+}
+
+.menu-lateral ul li a {
+    display: flex;
+    align-items: center;
+    min-height: 64px;
+    padding: 14px 18px;
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: clamp(1.1rem, 4vw, 1.9rem);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.menu-lateral ul li a:hover {
+    background-color: var(--acento);
+    color: var(--azul-oscuro);
+    transform: translateX(8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ===== IMAGEN BAJO AZUL ===== */
+.imagen-bajo-azul {
+    position: relative;
+    min-height: 180px;
+    border-radius: 18px;
+    overflow: hidden;
+    background: linear-gradient(160deg, #f9fbff 0%, #dcecff 100%);
+    border: 1px solid rgba(11, 78, 162, 0.08);
+    box-shadow: 0 18px 40px rgba(8, 52, 107, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen-bajo-azul span {
+    color: var(--azul-principal);
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.imagen-bajo-azul-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+
+
+/* ===== CONTENIDO DESCRIPTIVO ===== */
+.contenido-descriptivo {
+    padding: 24px 20px;
+    background-color: rgba(255,255,255,0.88);
+    border-radius: 20px;
+    box-shadow: 0 18px 40px rgba(8, 52, 107, 0.1);
+    overflow: hidden;
+    min-width: 0;
+    width: 100%;
+}
+
+.contenido-principal-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.contenido-principal-texto {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contenido-principal-imagen {
+    position: relative;
+    min-height: 220px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: linear-gradient(160deg, #f9fbff 0%, #dcecff 100%);
+    border: 1px solid rgba(11, 78, 162, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-principal-imagen span {
+    color: var(--azul-principal);
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.contenido-principal-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+
+
+.contenido-descriptivo h1 {
+    color: var(--azul-oscuro);
+    margin-bottom: 16px;
+    font-size: clamp(1.6rem, 5vw, 3.4rem);
+    border-left: 8px solid var(--acento);
+    padding-left: 12px;
+    line-height: 1.15;
+    overflow-wrap: break-word;
+}
+
+.contenido-descriptivo p {
+    font-size: 1.1rem;
+    text-align: justify;
+    color: var(--texto-secundario);
+    font-weight: 700;
+}
+
+/* ===== PROPUESTAS ===== */
+.propuestas-solidarias {
+    background: var(--acento);
+    padding: 16px 18px;
+    text-align: center;
+    border-radius: 14px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+    width: 100%;
+}
+
+.propuestas-solidarias h3 {
+    color: var(--azul-oscuro);
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+.propuestas-solidarias a {
+    color: var(--blanco);
+    background-color: var(--azul-principal);
+    padding: 5px 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.propuestas-solidarias a:hover {
+    background-color: #002244;
+}
+
+/* ===== CONTACTO ===== */
+.contacto {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    padding: 24px 18px;
+    margin-top: 32px;
+}
+
+.contacto table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.redes-sociales {
+    width: 36px;
+    height: 36px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s;
+}
+
+.redes-sociales:hover {
+    transform: scale(1.2);
+    filter: brightness(0) saturate(100%) invert(84%) sepia(47%) saturate(1311%) hue-rotate(341deg) brightness(103%) contrast(101%);
+}
+
+.contacto td {
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+}
+
+/* ===== TABLET ===== */
+@media (min-width: 600px) {
+    .header {
+        padding: 24px 32px;
+    }
+
+    .main {
+        padding: 28px 32px;
+    }
+
+    .menu-lateral ul li a {
+        min-height: 76px;
+    }
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 769px) {
+    .header {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+        padding: 28px 50px;
+    }
+
+    .logo img {
+        width: min(340px, 100%);
+    }
+
+    .titulo {
+        text-align: right;
+    }
+
+    .subtitulo {
+        font-size: 17px;
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: minmax(260px, 29vw) 1fr;
+        min-height: 74vh;
+        gap: 24px;
+        padding: 38px 50px;
+    }
+
+    .columna-izquierda {
+        gap: 10px;
+    }
+
+    .columna-derecha {
+        gap: 24px;
+    }
+
+    .columna-izquierda,
+    .columna-derecha {
+        height: 100%;
+    }
+
+    .menu-lateral {
+        padding: 32px 24px;
+        border-radius: 28px;
+    }
+
+    .menu-lateral ul li a {
+        min-height: 88px;
+        padding: 18px 22px;
+        font-size: clamp(1.45rem, 1.8vw, 1.9rem);
+        border-radius: 22px;
+    }
+
+    .imagen-bajo-azul {
+        min-height: 210px;
+        border-radius: 24px;
+        flex: 1;
+    }
+
+    .contenido-descriptivo {
+        padding: 42px 44px;
+        border-radius: 28px;
+        height: 100%;
+    }
+
+    .contenido-principal-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 38%);
+        align-items: stretch;
+        height: 100%;
+        gap: 28px;
+    }
+
+    .contenido-principal-imagen {
+        min-height: 360px;
+        border-radius: 22px;
+    }
+
+    .contenido-descriptivo h1 {
+        font-size: clamp(2.3rem, 3vw, 3.4rem);
+        border-left: 10px solid var(--acento);
+        padding-left: 15px;
+        margin-bottom: 20px;
+    }
+
+    .contenido-descriptivo p {
+        font-size: 24px;
+    }
+
+    .propuestas-solidarias {
+        padding: 18px 20px;
+        margin-top: auto;
+    }
+
+    .propuestas-solidarias h3 {
+        font-size: 1rem;
+    }
+
+    .contacto {
+        padding: 30px;
+        margin-top: 50px;
+    }
+
+    .redes-sociales {
+        width: 40px;
+        height: 40px;
+    }
+}

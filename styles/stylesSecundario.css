@@ -1,0 +1,398 @@
+* {
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --azul-principal: #0b4ea2;
+    --azul-oscuro: #08346b;
+    --azul-suave: #eaf3ff;
+    --blanco: #ffffff;
+    --texto: #1d2b3a;
+    --texto-secundario: #4b6177;
+    --acento: #ffd447;
+    --borde: rgba(11, 78, 162, 0.12);
+}
+
+body {
+    background: linear-gradient(180deg, #f7fbff 0%, #eaf3ff 100%);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: var(--blanco);
+    color: var(--azul-oscuro);
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    border-bottom: 5px solid var(--acento);
+    box-shadow: 0 10px 26px rgba(8, 52, 107, 0.08);
+}
+
+.logo img {
+    display: block;
+    width: min(240px, 100%);
+    height: auto;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.subtitulo {
+    color: var(--azul-principal);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.titulo h2 {
+    font-size: clamp(1.4rem, 5vw, 3rem);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--azul-oscuro);
+    font-weight: 800;
+}
+
+/* ===== MAIN (mobile: single column) ===== */
+.main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 16px;
+    padding: 20px 18px;
+}
+
+/* ===== CATEGORIAS ===== */
+.categorias {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn-volver {
+    margin-left: auto;
+    padding: 10px 20px;
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+    border: none;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.25s ease, transform 0.25s ease;
+    display: none;
+}
+
+.btn-volver:hover {
+    background: var(--acento);
+    color: var(--azul-oscuro);
+    transform: translateX(-3px);
+}
+
+.categoria-btn {
+    border: 1px solid var(--borde);
+    background: rgba(255,255,255,0.92);
+    color: var(--azul-oscuro);
+    border-radius: 999px;
+    padding: 10px 16px;
+    font-size: 0.98rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.categoria-btn:hover,
+.categoria-btn.activo {
+    background: var(--acento);
+    color: var(--azul-oscuro);
+    border-color: transparent;
+}
+
+/* ===== MENU LATERAL ===== */
+.menu-lateral {
+    grid-column: 1;
+    grid-row: 2;
+    background: linear-gradient(180deg, var(--azul-oscuro) 0%, var(--azul-principal) 100%);
+    padding: 20px 14px;
+    border-radius: 20px;
+    box-shadow: 0 22px 45px rgba(8, 52, 107, 0.22);
+    align-self: start;
+    width: 100%;
+}
+
+.menu-lateral h3 {
+    color: var(--blanco);
+    font-size: 1rem;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+}
+
+.menu-lateral button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    min-height: 64px;
+    padding: 14px 18px;
+    color: var(--blanco);
+    text-align: left;
+    font-weight: 700;
+    font-size: clamp(1.1rem, 4vw, 1.9rem);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.1);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.menu-lateral button:hover,
+.menu-lateral button.activo {
+    background-color: var(--acento);
+    color: var(--azul-oscuro);
+    transform: translateX(6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ===== CONTENIDO DINAMICO ===== */
+.contenido-dinamico {
+    grid-column: 1;
+    grid-row: 3;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 20px;
+    box-shadow: 0 18px 40px rgba(8, 52, 107, 0.1);
+    padding: 24px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    transition: opacity 0.28s ease, transform 0.28s ease;
+    align-self: start;
+}
+
+.contenido-dinamico.en-transicion {
+    opacity: 0.55;
+    transform: translateY(10px);
+}
+
+.texto-panel h1 {
+    color: var(--azul-oscuro);
+    margin-bottom: 14px;
+    font-size: clamp(1.6rem, 5vw, 3.2rem);
+    border-left: 8px solid var(--acento);
+    padding-left: 12px;
+    line-height: 1.15;
+}
+
+.texto-panel p {
+    font-size: 1.1rem;
+    text-align: justify;
+    color: var(--texto-secundario);
+    font-weight: 700;
+}
+
+.foto-panel {
+    background: linear-gradient(160deg, #f9fbff 0%, #dcecff 100%);
+    border-radius: 18px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    border: 1px solid var(--borde);
+    min-width: 0;
+}
+
+
+/* ===== PROPUESTAS ===== */
+.propuestas-solidarias {
+    grid-column: 1;
+    grid-row: 4;
+    background: var(--acento);
+    padding: 16px 18px;
+    text-align: center;
+    border-radius: 14px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+    width: 100%;
+}
+
+.propuestas-solidarias h3 {
+    color: var(--azul-oscuro);
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+.propuestas-solidarias a {
+    color: var(--blanco);
+    background-color: var(--azul-principal);
+    padding: 5px 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.propuestas-solidarias a:hover {
+    background-color: #002244;
+}
+
+/* ===== CONTACTO ===== */
+.contacto {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    padding: 24px 18px;
+    margin-top: 32px;
+}
+
+.contacto table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.redes-sociales {
+    width: 36px;
+    height: 36px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.redes-sociales:hover {
+    transform: scale(1.2);
+    filter: brightness(0) saturate(100%) invert(84%) sepia(47%) saturate(1311%) hue-rotate(341deg) brightness(103%) contrast(101%);
+}
+
+.contacto td {
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+}
+
+/* ===== TABLET ===== */
+@media (min-width: 600px) {
+    .header {
+        padding: 24px 32px;
+    }
+
+    .main {
+        padding: 28px 32px;
+        gap: 20px;
+    }
+
+    .menu-lateral button {
+        min-height: 76px;
+    }
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 769px) {
+    .header {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+        padding: 28px 50px;
+    }
+
+    .logo img {
+        width: min(340px, 100%);
+    }
+
+    .titulo {
+        text-align: right;
+    }
+
+    .subtitulo {
+        font-size: 17px;
+    }
+
+    .main {
+        grid-template-columns: minmax(260px, 29vw) 1fr;
+        grid-template-rows: auto 1fr auto;
+        padding: 32px 50px;
+        gap: 24px;
+    }
+
+    .categorias {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .menu-lateral {
+        grid-column: 1;
+        grid-row: 2;
+        padding: 24px 18px;
+        border-radius: 28px;
+    }
+
+    .menu-lateral button {
+        min-height: 88px;
+        padding: 18px 22px;
+        border-radius: 22px;
+        font-size: clamp(1.45rem, 1.8vw, 1.9rem);
+    }
+
+    .contenido-dinamico {
+        grid-column: 2;
+        grid-row: 2;
+        grid-template-columns: 1.05fr 0.95fr;
+        padding: 40px 44px;
+        gap: 28px;
+        border-radius: 28px;
+        align-items: flex-start;
+    }
+
+    .texto-panel h1 {
+        font-size: clamp(2.2rem, 3vw, 3.2rem);
+        border-left: 10px solid var(--acento);
+        padding-left: 15px;
+        margin-bottom: 18px;
+    }
+
+    .texto-panel p {
+        font-size: 1.35rem;
+    }
+
+    .foto-panel {
+        min-height: 260px;
+        padding: 24px;
+        border-radius: 24px;
+    }
+
+
+    .propuestas-solidarias {
+        grid-column: 2;
+        grid-row: 3;
+        justify-self: stretch;
+        align-self: end;
+        padding: 18px 20px;
+    }
+
+    .propuestas-solidarias h3 {
+        font-size: 1rem;
+    }
+
+    .contacto {
+        padding: 30px;
+        margin-top: 50px;
+    }
+
+    .redes-sociales {
+        width: 40px;
+        height: 40px;
+    }
+}
