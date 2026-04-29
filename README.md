@@ -14,7 +14,7 @@ para el voluntariado de los centros lasalianos y facilitara el registro de accio
 ## Tecnologías usadas
 - **HTML5** — Estructura semántica de las páginas principal y de categorías
 - **CSS3** — Estilos, animaciones y diseño responsive con Grid y Flexbox
-- **JavaScript ** — Renderizado dinámico de planes por categoría y animaciones de transición
+- **JavaScript** — Renderizado dinámico de planes por categoría y animaciones de transición
 - **Git / GitHub** — Control de versiones
 
 ## Capturas
@@ -25,12 +25,12 @@ para el voluntariado de los centros lasalianos y facilitara el registro de accio
 
 
 ### Vista de categoría
-<!-- Añade aquí una captura de una página de categoría (Alimento, Hogar, etc.) -->
-<!-- <img width="1440" alt="Vista de categoría" src="URL_DE_LA_IMAGEN" /> -->
+<img width="1880" height="906" alt="image" src="https://github.com/user-attachments/assets/95b9e809-7afa-4b84-a018-3b2d0a5456a4" />
+
 
 ## URL
 🌐 La aplicación está desplegada en Vercel:  
-[https://25-26-desafioaps-html-css-aps-13-5u.vercel.app](https://25-26-desafioaps-html-css-aps-13-5u.vercel.app)
+[https://pagina-solidaria-5ie9.vercel.app/](https://pagina-solidaria-5ie9.vercel.app/)
 
 📋 Instrucciones para añadir un nuevo reto solidario:  
 [Ver documento](https://docs.google.com/document/d/17INd6NPoUgiPrSuAqPe5rRU1Ckjhy9zW6Bm0oShB3NE/edit?usp=sharing)
